@@ -89,10 +89,6 @@
   src: local('SF Mono Heavy Italic'), url('/fonts/SFMonoHeavyItalic.woff') format('woff');
 }
 
-.font-sf-mono {
-  font-family: "SF Mono", monospace;
-}
-
 body {
   background-color: black;
 }
