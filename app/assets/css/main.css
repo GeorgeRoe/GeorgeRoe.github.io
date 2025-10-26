@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 300;
+  src: local('SF Mono Light'), url('/fonts/SFMonoLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: italic; 
+  font-weight: 300;
+  src: local('SF Mono Light Italic'), url('/fonts/SFMonoLightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('SF Mono Regular'), url('/fonts/SFMonoRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: local('SF Mono Regular Italic'), url('/fonts/SFMonoRegularItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: local('SF Mono Medium'), url('/fonts/SFMonoMedium.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: italic;
+  font-weight: 500;
+  src: local('SF Mono Medium Italic'), url('/fonts/SFMonoMediumItalic.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 600;
+  src: local('SF Mono Semibold'), url('/fonts/SFMonoSemibold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: italic;
+  font-weight: 600;
+  src: local('SF Mono Semibold Italic'), url('/fonts/SFMonoSemiboldItalic.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: local('SF Mono Bold'), url('/fonts/SFMonoBold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: local('SF Mono Bold Italic'), url('/fonts/SFMonoBoldItalic.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 800;
+  src: local('SF Mono Heavy'), url('/fonts/SFMonoHeavy.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: italic;
+  font-weight: 800;
+  src: local('SF Mono Heavy Italic'), url('/fonts/SFMonoHeavyItalic.woff') format('woff');
+}
+
+.font-sf-mono {
+  font-family: "SF Mono", monospace;
+}
+
+body {
+  background-color: black;
+}
