@@ -1,5 +1,5 @@
 <template>
   <div>
-    Testing Testing 123
+    <name-carousel />
   </div>
 </template>
