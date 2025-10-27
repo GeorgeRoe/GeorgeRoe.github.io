@@ -1,8 +1,10 @@
-export default {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: [
     './app/**/*.{vue,ts,js}',
     './components/**/*.{vue,ts,js}',
-    './layouts/**/*.{vue,ts,js}'
+    './layouts/**/*.{vue,ts,js}',
   ],
   theme: {
     extend: {
@@ -13,3 +15,5 @@ export default {
   },
   plugins: [],
 }
+
+export default config
