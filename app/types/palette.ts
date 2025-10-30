@@ -3,6 +3,7 @@ export enum Palette {
   Bg1,
   Bg2,
   Text,
+  DimmedText,
   Blue,
   Red,
 }

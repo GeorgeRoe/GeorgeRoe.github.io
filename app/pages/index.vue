@@ -5,6 +5,7 @@ import { GUILT_ASCII_LOGO } from '~/data/guilt';
 import { useTheme } from '~/composables/useTheme';
 import { Palette } from '~/types/palette';
 import { ThemeName } from '~/data/theme';
+import type { StyleValue } from 'vue';
 
 const { theme, setTheme } = useTheme()
 
@@ -53,6 +54,12 @@ const multidisciplineArticles = [
     ]
   }
 ]
+
+const outlinedTextStyle = computed<StyleValue>(() => ({
+  color: theme(Palette.Bg1),
+  '-webkit-text-stroke-color': theme(Palette.DimmedText),
+  '-webkit-text-stroke-width': '1px',
+}))
 </script>
 
 <template>
@@ -66,7 +73,7 @@ const multidisciplineArticles = [
     <p>Hi, I am <span class="font-bold">George Roe</span>, a software engineer working at the <a href="https://www.ukri.org/councils/stfc/">Science and Technology Facilities Council</a>. <span class="font-bold">I enjoy improving others lives through technology and software.</span></p>
   </section>
   <section class="p-2">
-    <h2 class="text-center font-extrabold text-4xl text-neutral-900 [-webkit-text-stroke:1px_#777]">MULTIDISCIPLINE</h2>
+    <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">MULTIDISCIPLINE</h2>
     <div class="grid grid-cols-1 gap-2">
       <article
         v-for="article in multidisciplineArticles"
@@ -88,7 +95,7 @@ const multidisciplineArticles = [
     </div>
   </section>
   <section class="container mx-auto px-2 py-6">
-    <h2 class="text-center font-extrabold text-4xl text-neutral-900 [-webkit-text-stroke:1px_#777]">PROJECTS</h2>
+    <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">PROJECTS</h2>
     <div class="flex flex-col gap-2">
       <project-article title="Green Usage Impact Logging Tool" info="Command Line Interface to allow super computer users to track their carbon emissions.">
         <pre
