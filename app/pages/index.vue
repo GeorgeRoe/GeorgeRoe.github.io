@@ -2,6 +2,11 @@
 import { Technology } from '~/types/technology';
 import { technologies } from '~/data/technologies'
 import { GUILT_ASCII_LOGO } from '~/data/guilt';
+import { useTheme } from '~/composables/useTheme';
+import { Palette } from '~/types/palette';
+import { ThemeName } from '~/data/theme';
+
+const { theme, setTheme } = useTheme()
 
 const multidisciplineArticles = [
   {
@@ -51,10 +56,12 @@ const multidisciplineArticles = [
 </script>
 
 <template>
+  <button @click="setTheme(ThemeName.OneDarkDarker)">OneDark</button>
+  <button @click="setTheme(ThemeName.HighContrast)">High Contrast</button>
   <section class="pb-12 pt-16">
     <name-carousel />
   </section>
-  <hr class="border-neutral-800 mx-12" />
+  <hr class="mx-12" :style="{ borderColor: theme(Palette.Bg2) }" />
   <section class="container mx-auto px-2 py-6">
     <p>Hi, I am <span class="font-bold">George Roe</span>, a software engineer working at the <a href="https://www.ukri.org/councils/stfc/">Science and Technology Facilities Council</a>. <span class="font-bold">I enjoy improving others lives through technology and software.</span></p>
   </section>
@@ -63,7 +70,8 @@ const multidisciplineArticles = [
     <div class="grid grid-cols-1 gap-2">
       <article
         v-for="article in multidisciplineArticles"
-        class="border border-neutral-800 rounded-md py-1.5 px-2"
+        class="border rounded-md py-1.5 px-2"
+        :style="{ borderColor: theme(Palette.Bg2) }"
       >
         <h3 class="font-bold text-lg">{{ article.title }}</h3>
         <div class="flex flex-wrap gap-1">
@@ -83,7 +91,10 @@ const multidisciplineArticles = [
     <h2 class="text-center font-extrabold text-4xl text-neutral-900 [-webkit-text-stroke:1px_#777]">PROJECTS</h2>
     <div class="flex flex-col gap-2">
       <project-article title="Green Usage Impact Logging Tool" info="Command Line Interface to allow super computer users to track their carbon emissions.">
-        <pre class="font-mono font-extrabold text-[2.8vw] text-red-500 my-2 mx-auto w-fit">{{ GUILT_ASCII_LOGO }}</pre>
+        <pre
+          class="font-mono font-extrabold text-[2.8vw] my-2 mx-auto w-fit"
+          :style="{ color: theme(Palette.Red) }"
+        >{{ GUILT_ASCII_LOGO }}</pre>
       </project-article>
       <project-article title="Personal Website" info="The website you are currently on!">
         <p>Insert image here.</p>

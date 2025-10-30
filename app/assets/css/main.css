@@ -85,7 +85,3 @@
   font-weight: 800;
   src: local('SF Mono Heavy Italic'), url('/fonts/SFMonoHeavyItalic.woff') format('woff');
 }
-
-body {
-  background-color: black;
-}
