@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Technology } from '~/types/technology';
 import { technologies } from '~/data/technologies'
+import { GUILT_ASCII_LOGO } from '~/data/guilt';
 
 const multidisciplineArticles = [
   {
@@ -77,5 +78,17 @@ const multidisciplineArticles = [
         <p>{{ article.description }}</p>
       </article>
     </div>
+  </section>
+  <section class="container mx-auto px-2 py-6">
+    <h2 class="text-center font-extrabold text-4xl text-neutral-900 [-webkit-text-stroke:1px_#777]">PROJECTS</h2>
+    <div class="flex flex-col gap-2">
+      <project-article title="Green Usage Impact Logging Tool" info="Command Line Interface to allow super computer users to track their carbon emissions.">
+        <pre class="font-mono font-extrabold text-[2.8vw] text-red-500 my-2 mx-auto w-fit">{{ GUILT_ASCII_LOGO }}</pre>
+      </project-article>
+      <project-article title="Personal Website" info="The website you are currently on!">
+        <p>Insert image here.</p>
+      </project-article>
+    </div>
+    <a>See All Projects</a>
   </section>
 </template>
