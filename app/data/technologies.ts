@@ -11,7 +11,7 @@ export const technologies: Record<Technology, TechnologyData> = {
   },
   [Technology.Fortran]: {
     name: 'Fortran',
-    color: '#4D4DFF'
+    color: '#8F61BA'
   },
   [Technology.MPI]: {
     name: 'MPI',
