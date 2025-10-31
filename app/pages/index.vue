@@ -89,10 +89,20 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
 <template>
   <button @click="setTheme(ThemeName.OneDarkDarker)">OneDark</button>
   <button @click="setTheme(ThemeName.HighContrast)">High Contrast</button>
-  <section class="pb-12 pt-16">
+  <section class="pb-6 pt-16">
     <name-carousel />
   </section>
-  <hr class="mx-12" :style="{ borderColor: theme(Palette.Bg2) }" />
+  <section class="container mx-auto px-12 grid items-center justify-items-stretch">
+    <hr class="col-start-1 row-start-1" :style="{ borderColor: theme(Palette.Bg2) }" />
+    <div class="col-start-1 row-start-1 z-10 text-center flex items-center justify-around">
+      <a href="https://github.com/GeorgeRoe/" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: theme(Palette.Bg0) }" class="p-2">
+        <icon-github class="h-6 aspect-square" :style="{ fill: theme(Palette.Text) }" />
+      </a>
+      <a href="https://www.linkedin.com/in/georgesroe" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: theme(Palette.Bg0) }" class="p-2">
+        <icon-linkedin class="h-8 aspect-square" :style="{ fill: theme(Palette.Text) }" />
+      </a>
+    </div>
+  </section>
   <section class="container mx-auto px-2 py-6">
     <p>Hi, I am <span class="font-bold">George Roe</span>, a software engineer working at the <a href="https://www.ukri.org/councils/stfc/">Science and Technology Facilities Council</a>. <span class="font-bold">I enjoy improving others lives through technology and software.</span></p>
   </section>
