@@ -18,7 +18,7 @@ const { theme } = useTheme();
       :key="index"
       class="flex gap-2 p-1"
     >
-      <div class="flex flex-col items-center gap-1">
+      <div class="flex flex-col items-center gap-2">
         <div
           class="aspect-square w-4 rounded-full"
           :style="{ backgroundColor: theme(Palette.Blue) }"
