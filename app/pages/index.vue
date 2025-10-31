@@ -6,6 +6,7 @@ import { useTheme } from '~/composables/useTheme';
 import { Palette } from '~/types/palette';
 import { ThemeName } from '~/data/theme';
 import type { StyleValue } from 'vue';
+import type { TimelineItem } from '~/types/timelineItem';
 
 const { theme, setTheme } = useTheme()
 
@@ -52,6 +53,29 @@ const multidisciplineArticles = [
       Technology.Python,
       Technology.Java,
     ]
+  }
+]
+
+const timelineItems: Array<TimelineItem> = [
+  {
+    date: "September 2024 - Present",
+    title: "Software Engineer at STFC",
+    description: "Working on optimising and parallelising scientific codes to run efficiently on distributed high performance computers.",
+  },
+  {
+    date: "September 2023 - Present",
+    title: "Digital and Technology Solutions Professional Degree Apprenticeship",
+    description: "On track for a First-Class BSc (Hons) at Manchester Metropolitan University while maintaining full-time employment",
+  },
+  {
+    date: "July 2023 - September 2024",
+    title: "Full Stack Developer at 360 Systems Ltd",
+    description: "Developed and maintained business systems using modern web technologies. Communicated with and presented to clients regularly.",
+  },
+  {
+    date: "September 2021 - June 2023",
+    title: "A Levels at Neston High School",
+    description: "Completed A levels in Computer Science, Mathematics and Physics with grades A*, A*, A respectively.",
   }
 ]
 
@@ -108,5 +132,9 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
       </project-article>
     </div>
     <a>See All Projects</a>
+  </section>
+  <section class="container mx-auto px-2">
+    <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">EXPERIENCE</h2>
+    <timeline :items="timelineItems" />
   </section>
 </template>
