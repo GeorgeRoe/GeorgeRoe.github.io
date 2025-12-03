@@ -87,8 +87,6 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
 </script>
 
 <template>
-  <button @click="setTheme(ThemeName.OneDarkDarker)">OneDark</button>
-  <button @click="setTheme(ThemeName.HighContrast)">High Contrast</button>
   <section class="pb-6 pt-16">
     <name-carousel />
   </section>

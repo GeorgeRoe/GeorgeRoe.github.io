@@ -14,9 +14,11 @@ useHead(() => ({
 
 <template>
   <div
-    class="w-full min-h-screen min-h-[100dvh] font-sf-mono overflow-x-hidden overflow-y-auto"
+    class="w-full font-sf-mono overflow-x-hidden relative"
     :style="{ backgroundColor: theme(Palette.Bg0), color: theme(Palette.Text) }"
   >
-    <nuxt-page />
+    <nuxt-layout>
+      <nuxt-page />
+    </nuxt-layout>
   </div>
 </template>
