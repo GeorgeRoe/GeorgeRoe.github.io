@@ -13,10 +13,10 @@ const { theme } = useTheme()
 
 <template>
   <article
-    class="flex flex-col items-stretch border rounded-md"
+    class="flex flex-col items-stretch border rounded-md overflow-hidden"
     :style="{ borderColor: theme(Palette.Bg2) }"
   >
-    <div>
+    <div class="overflow-hidden">
       <slot />
     </div>
     <h3

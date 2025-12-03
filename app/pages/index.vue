@@ -4,7 +4,6 @@ import { technologies } from '~/data/technologies'
 import { GUILT_ASCII_LOGO } from '~/data/guilt';
 import { useTheme } from '~/composables/useTheme';
 import { Palette } from '~/types/palette';
-import { ThemeName } from '~/data/theme';
 import type { StyleValue } from 'vue';
 import type { TimelineItem } from '~/types/timelineItem';
 
@@ -84,6 +83,14 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
   '-webkit-text-stroke-color': theme(Palette.DimmedText),
   '-webkit-text-stroke-width': '1px',
 }))
+
+const rustExampleSlides = [ 1, 3, 9, 21 ]
+const rustSlideIterator = ref(0)
+onMounted(() => {
+  setInterval(() => {
+    rustSlideIterator.value = rustSlideIterator.value % rustExampleSlides.length + 1
+  }, 4000)
+})
 </script>
 
 <template>
@@ -134,6 +141,25 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
           class="font-mono font-extrabold text-[2.8vw] my-2 mx-auto w-fit"
           :style="{ color: theme(Palette.Red) }"
         >{{ GUILT_ASCII_LOGO }}</pre>
+      </project-article>
+      <project-article title="MMU Rust Guest Lecture" info="A guest lecture I delivered to 3rd year undergraduate students at Manchester Metropolitan University about the benefits of Rust over traditional languages.">
+        <!-- <div class="grid grid-cols-1">
+          <iframe
+            v-for="(slide, index) in rustExampleSlides"
+            :key="slide"
+            :src="`https://georgeroe.github.io/rust-mmu-guest-lecture/${slide}`"
+            class="w-full aspect-video transition-opacity duration-1000 col-start-1 row-start-1"
+            :style="{
+              opacity: index === rustSlideIterator ? 1 : 0
+            }"
+          ></iframe>
+        </div> -->
+        <div class="pt-2">
+          <icon-man-met-uni class="w-full px-4 mx-auto fill-white" />
+          <div class="flex justify-center items-center h-20">
+            <icon-ferris-the-crab class="h-32 mx-auto" />
+          </div>
+        </div>
       </project-article>
       <project-article title="Personal Website" info="The website you are currently on!">
         <p>Insert image here.</p>
