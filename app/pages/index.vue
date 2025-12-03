@@ -161,9 +161,6 @@ onMounted(() => {
           </div>
         </div>
       </project-article>
-      <project-article title="Personal Website" info="The website you are currently on!">
-        <p>Insert image here.</p>
-      </project-article>
     </div>
     <a>See All Projects</a>
   </section>
