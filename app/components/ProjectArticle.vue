@@ -4,6 +4,7 @@ import { Palette } from '~/types/palette';
 interface ProjectArticleProps {
   title: string
   info: string
+  link: string
 }
 
 defineProps<ProjectArticleProps>()
@@ -28,6 +29,13 @@ const { theme } = useTheme()
     >
       {{ title }}
     </h3>
-    <p>{{ info }}</p>
+    <p class="px-2 py-1">{{ info }}</p>
+    <a
+      :href="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="underline px-2"
+      :style="{ color: theme(Palette.DimmedText) }"
+    >See more</a>
   </article>
 </template>

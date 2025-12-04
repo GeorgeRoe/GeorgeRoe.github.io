@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { Technology } from '~/types/technology';
 import { technologies } from '~/data/technologies'
-import { GUILT_ASCII_LOGO } from '~/data/guilt';
 import { useTheme } from '~/composables/useTheme';
 import { Palette } from '~/types/palette';
-import type { StyleValue } from 'vue';
 import type { TimelineItem } from '~/types/timelineItem';
+import type { StyleValue } from 'vue';
 
-const { theme, setTheme } = useTheme()
+const { theme } = useTheme()
 
 const multidisciplineArticles = [
   {
@@ -127,23 +126,8 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
   </section>
   <section class="container mx-auto px-2 py-6">
     <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">PROJECTS</h2>
-    <div class="flex flex-col gap-2">
-      <project-article title="Green Usage Impact Logging Tool" info="Command Line Interface to allow super computer users to track their carbon emissions.">
-        <pre
-          class="font-mono font-extrabold text-[2.8vw] my-2 mx-auto w-fit"
-          :style="{ color: theme(Palette.Red) }"
-        >{{ GUILT_ASCII_LOGO }}</pre>
-      </project-article>
-      <project-article title="MMU Rust Guest Lecture" info="A guest lecture I delivered to 3rd year undergraduate students at Manchester Metropolitan University about the benefits of Rust over traditional languages.">
-        <div class="pt-2">
-          <icon-man-met-uni class="w-full px-4 mx-auto fill-white" />
-          <div class="flex justify-center items-center h-20">
-            <icon-ferris-the-crab class="h-32 mx-auto" />
-          </div>
-        </div>
-      </project-article>
-    </div>
-    <a>See All Projects</a>
+    <projects-list />
+    <a href="/projects">See All Projects</a>
   </section>
   <section class="container mx-auto px-2">
     <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">EXPERIENCE</h2>
