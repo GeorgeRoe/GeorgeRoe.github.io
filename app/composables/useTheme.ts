@@ -5,7 +5,9 @@ import { ONEDARK_DARKER_THEME } from '~/data/theme/onedark'
 const DEFAULT_THEME: Record<Palette, string> = ONEDARK_DARKER_THEME
 
 export const useTheme = () => {
-  const themeName = useState<ThemeName>('theme-name', () => ThemeName.OneDarkDarker)
+  const themeName = useCookie<ThemeName>('theme-name', {
+    default: () => ThemeName.OneDarkDarker
+  })
 
   const currentTheme = computed(() => themes[themeName.value] || DEFAULT_THEME)
 
