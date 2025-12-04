@@ -4,7 +4,7 @@ import { Palette } from '~/types/palette';
 const { theme } = useTheme()
 
 function gradient(direction: 'right' | 'left') {
-  return computed(() => `linear-gradient(to ${direction}, ${theme(Palette.Bg0)} 10%, transparent 100%)`)
+  return computed(() => `linear-gradient(to ${direction}, ${theme.value[Palette.Bg0]} 10%, transparent 100%)`)
 }
 </script>
 
@@ -26,7 +26,7 @@ function gradient(direction: 'right' | 'left') {
           <span v-for="i in 10" class="inline-block mx-1">GEORGE</span>
         </div>
         <div class="whitespace-nowrap inline-block text-8xl pan-left">
-          <span v-for="i in 10" class="inline-block mx-1" :style="{ color: theme(Palette.Blue) }">ROE</span>
+          <span v-for="i in 10" class="inline-block mx-1" :style="{ color: theme[Palette.Blue] }">ROE</span>
         </div>
       </h1>
     </div>

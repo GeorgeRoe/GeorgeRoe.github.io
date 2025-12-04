@@ -5,8 +5,8 @@ import type { StyleValue } from 'vue';
 const { theme } = useTheme()
 
 const outlinedTextStyle = computed<StyleValue>(() => ({
-  color: theme(Palette.Bg1),
-  '-webkit-text-stroke-color': theme(Palette.DimmedText),
+  color: theme.value[Palette.Bg1],
+  '-webkit-text-stroke-color': theme.value[Palette.DimmedText],
   '-webkit-text-stroke-width': '1px',
 }))
 </script>

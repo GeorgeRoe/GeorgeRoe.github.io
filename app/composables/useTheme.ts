@@ -11,9 +11,9 @@ export const useTheme = () => {
 
   const currentTheme = computed(() => themes[themeName.value] || DEFAULT_THEME)
 
-  function theme(color: Palette): string {
-    return currentTheme.value[color]
-  }
+  const theme = computed(() => {
+    return currentTheme.value
+  })
 
   const setTheme = (newThemeName: ThemeName) => {
     themeName.value = newThemeName

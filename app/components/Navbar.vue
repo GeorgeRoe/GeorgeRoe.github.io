@@ -14,12 +14,12 @@ function clickThemeButton(name: ThemeName) {
 
 <template>
   <div>
-    <nav class="flex items-center justify-between py-1 px-2 border-b" :style="{ borderColor: theme(Palette.Bg1) }">
+    <nav class="flex items-center justify-between py-1 px-2 border-b" :style="{ borderColor: theme[Palette.Bg1] }">
       <NuxtLink to="/" class="font-extrabold text-lg">
         <span>G</span>
-        <span :style="{ color: theme(Palette.Blue) }">ROE</span>
+        <span :style="{ color: theme[Palette.Blue] }">ROE</span>
       </NuxtLink>
-      <IconStyle class="h-6 cursor-pointer" :style="{ fill: theme(Palette.Text) }" @click="showColorModal = true" />
+      <IconStyle class="h-6 cursor-pointer" :style="{ fill: theme[Palette.Text] }" @click="showColorModal = true" />
     </nav>
     <Modal v-model="showColorModal">
       <div class="flex flex-col gap-1">

@@ -21,16 +21,16 @@ const { theme } = useTheme();
       <div class="flex flex-col items-center gap-2">
         <div
           class="aspect-square w-4 rounded-full"
-          :style="{ backgroundColor: theme(Palette.Blue) }"
+          :style="{ backgroundColor: theme[Palette.Blue] }"
         />
         <div
           v-if="index < items.length - 1"
           class="border-l flex-1"
-          :style="{ borderColor: theme(Palette.Blue) }"
+          :style="{ borderColor: theme[Palette.Blue] }"
         />
       </div>
       <div>
-        <div class="text-sm/4" :style="{ color: theme(Palette.DimmedText) }">
+        <div class="text-sm/4" :style="{ color: theme[Palette.DimmedText] }">
           {{ item.date }}
         </div>
         <h3 class="text-lg font-bold">

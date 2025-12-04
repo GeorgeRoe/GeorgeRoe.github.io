@@ -78,8 +78,8 @@ const timelineItems: Array<TimelineItem> = [
 ]
 
 const outlinedTextStyle = computed<StyleValue>(() => ({
-  color: theme(Palette.Bg1),
-  '-webkit-text-stroke-color': theme(Palette.DimmedText),
+  color: theme.value[Palette.Bg1],
+  '-webkit-text-stroke-color': theme.value[Palette.DimmedText],
   '-webkit-text-stroke-width': '1px',
 }))
 </script>
@@ -89,13 +89,13 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
     <name-carousel />
   </section>
   <section class="container mx-auto px-12 grid items-center justify-items-stretch">
-    <hr class="col-start-1 row-start-1" :style="{ borderColor: theme(Palette.Bg2) }" />
+    <hr class="col-start-1 row-start-1" :style="{ borderColor: theme[Palette.Bg2] }" />
     <div class="col-start-1 row-start-1 z-10 text-center flex items-center justify-around">
-      <a href="https://github.com/GeorgeRoe/" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: theme(Palette.Bg0) }" class="p-2">
-        <icon-github class="h-6 aspect-square" :style="{ fill: theme(Palette.Text) }" />
+      <a href="https://github.com/GeorgeRoe/" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: theme[Palette.Bg0] }" class="p-2">
+        <icon-github class="h-6 aspect-square" :style="{ fill: theme[Palette.Text] }" />
       </a>
-      <a href="https://www.linkedin.com/in/georgesroe" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: theme(Palette.Bg0) }" class="p-2">
-        <icon-linkedin class="h-8 aspect-square" :style="{ fill: theme(Palette.Text) }" />
+      <a href="https://www.linkedin.com/in/georgesroe" target="_blank" rel="noopener noreferrer" :style="{ backgroundColor: theme[Palette.Bg0] }" class="p-2">
+        <icon-linkedin class="h-8 aspect-square" :style="{ fill: theme[Palette.Text] }" />
       </a>
     </div>
   </section>
@@ -108,7 +108,7 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
       <article
         v-for="article in multidisciplineArticles"
         class="border rounded-md py-1.5 px-2"
-        :style="{ borderColor: theme(Palette.Bg2) }"
+        :style="{ borderColor: theme[Palette.Bg2] }"
       >
         <h3 class="font-bold text-lg">{{ article.title }}</h3>
         <div class="flex flex-wrap gap-1">

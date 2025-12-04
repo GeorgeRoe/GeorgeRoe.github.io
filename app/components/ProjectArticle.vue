@@ -15,7 +15,7 @@ const { theme } = useTheme()
 <template>
   <article
     class="flex flex-col items-stretch border rounded-md overflow-hidden"
-    :style="{ borderColor: theme(Palette.Bg2) }"
+    :style="{ borderColor: theme[Palette.Bg2] }"
   >
     <div class="overflow-hidden">
       <slot />
@@ -23,8 +23,8 @@ const { theme } = useTheme()
     <h3
       class="border-t border-b text-center font-bold"
       :style="{
-        backgroundColor: theme(Palette.Bg1),
-        borderColor: theme(Palette.Bg2),
+        backgroundColor: theme[Palette.Bg1],
+        borderColor: theme[Palette.Bg2],
       }"
     >
       {{ title }}
@@ -35,7 +35,7 @@ const { theme } = useTheme()
       target="_blank"
       rel="noopener noreferrer"
       class="underline px-2"
-      :style="{ color: theme(Palette.DimmedText) }"
+      :style="{ color: theme[Palette.DimmedText] }"
     >See more</a>
   </article>
 </template>
