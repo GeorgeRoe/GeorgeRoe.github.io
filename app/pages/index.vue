@@ -127,7 +127,7 @@ const outlinedTextStyle = computed<StyleValue>(() => ({
   <section class="container mx-auto px-2 py-6">
     <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">PROJECTS</h2>
     <projects-list />
-    <a href="/projects">See All Projects</a>
+    <a href="/projects" class="underline px-2">See All Projects</a>
   </section>
   <section class="container mx-auto px-2">
     <h2 class="text-center font-extrabold text-4xl" :style="outlinedTextStyle">EXPERIENCE</h2>
