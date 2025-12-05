@@ -2,7 +2,7 @@
 import { Palette } from '~/types/palette'
 import { themes, ThemeName } from '~/data/theme'
 
-const { theme, setTheme } = useTheme()
+const { setTheme } = useThemeControl()
 
 const showColorModal = ref(false)
 
@@ -14,19 +14,19 @@ function clickThemeButton(name: ThemeName) {
 
 <template>
   <div>
-    <nav class="flex items-center justify-between py-1 px-2 border-b" :style="{ borderColor: theme[Palette.Bg1] }">
+    <nav class="flex items-center justify-between py-1 px-2 border-b border-background-1">
       <NuxtLink to="/" class="font-extrabold text-lg">
         <span>G</span>
-        <span :style="{ color: theme[Palette.Blue] }">ROE</span>
+        <span class="text-blue">ROE</span>
       </NuxtLink>
-      <IconStyle class="h-6 cursor-pointer" :style="{ fill: theme[Palette.Text] }" @click="showColorModal = true" />
+      <IconStyle class="h-6 cursor-pointer fill-text" @click="showColorModal = true" />
     </nav>
     <Modal v-model="showColorModal">
       <div class="flex flex-col gap-1">
         <button
           v-for="(theme, name) in themes"
           :key="name"
-          class="px-2 py-1 font-bold border rounded flex items-center gap-2 justify-between"
+          class="px-2 py-1 font-bold border rounded flex items-center gap-2 justify-between bg-background-0 text-text border-background-1"
           :style="{
             backgroundColor: theme[Palette.Bg0],
             color: theme[Palette.Text],

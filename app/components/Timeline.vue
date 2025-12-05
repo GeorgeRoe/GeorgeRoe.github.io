@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Palette } from '~/types/palette';
 import type { TimelineItem } from '~/types/timelineItem';
 
 interface TimelineProps {
@@ -7,8 +6,6 @@ interface TimelineProps {
 }
 
 defineProps<TimelineProps>();
-
-const { theme } = useTheme();
 </script>
 
 <template>
@@ -20,17 +17,15 @@ const { theme } = useTheme();
     >
       <div class="flex flex-col items-center gap-2">
         <div
-          class="aspect-square w-4 rounded-full"
-          :style="{ backgroundColor: theme[Palette.Blue] }"
+          class="aspect-square w-4 rounded-full bg-blue"
         />
         <div
           v-if="index < items.length - 1"
-          class="border-l flex-1"
-          :style="{ borderColor: theme[Palette.Blue] }"
+          class="border-l flex-1 border-blue"
         />
       </div>
       <div>
-        <div class="text-sm/4" :style="{ color: theme[Palette.DimmedText] }">
+        <div class="text-sm/4 text-text-dimmed">
           {{ item.date }}
         </div>
         <h3 class="text-lg font-bold">

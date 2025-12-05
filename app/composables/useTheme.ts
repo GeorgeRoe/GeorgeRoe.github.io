@@ -1,23 +1,31 @@
-import { Palette } from '~/types/palette'
 import { ThemeName, themes } from '~/data/theme'
-import { ONEDARK_DARKER_THEME } from '~/data/theme/onedark'
+import { ALL_PALETTE_KEYS } from '~/types/palette'
 
-const DEFAULT_THEME: Record<Palette, string> = ONEDARK_DARKER_THEME
-
-export const useTheme = () => {
-  const themeName = useCookie<ThemeName>('theme-name', {
+function useThemeName() {
+  return useCookie<ThemeName>('theme-name', {
     default: () => ThemeName.OneDarkDarker
   })
+}
 
-  const currentTheme = computed(() => themes[themeName.value] || DEFAULT_THEME)
-
-  const theme = computed(() => {
-    return currentTheme.value
-  })
+export function useThemeControl() {
+  const themeName = useThemeName()
 
   const setTheme = (newThemeName: ThemeName) => {
     themeName.value = newThemeName
   }
 
-  return { theme, setTheme }
+  return { setTheme }
+}
+
+export function useThemeStyle() {
+  const themeName = useThemeName()
+
+  return computed(() => {
+    const theme = themes[themeName.value]
+
+    return ALL_PALETTE_KEYS.reduce((style, key) => {
+      style[cssVarName(key)] = theme[key]
+      return style
+    }, {} as Record<string, string>)
+  })
 }

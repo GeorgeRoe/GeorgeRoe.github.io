@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import { Palette } from '~/types/palette';
-
-const { theme } = useTheme()
-
-function gradient(direction: 'right' | 'left') {
-  return computed(() => `linear-gradient(to ${direction}, ${theme.value[Palette.Bg0]} 10%, transparent 100%)`)
-}
 </script>
 
 <template>
@@ -14,19 +8,17 @@ function gradient(direction: 'right' | 'left') {
       class="relative -rotate-3 w-full mx-auto"
     >
       <div
-        class="w-1/4 h-full absolute z-10 -left-1"
-        :style="{ background: gradient('right').value }"
+        class="w-1/4 h-full absolute z-10 -left-1 bg-linear-to-r from-background-0 from-10% to-transparent"
       />
       <div
-        class="w-1/4 h-full absolute z-10 -right-1"
-        :style="{ background: gradient('left').value }"
+        class="w-1/4 h-full absolute z-10 -right-1 bg-linear-to-l from-background-0 from-10% to-transparent"
       />
       <h1 class="italic font-extrabold text-center w-full overflow-hidden">
         <div class="whitespace-nowrap inline-block text-7xl pan-right">
           <span v-for="i in 10" class="inline-block mx-1">GEORGE</span>
         </div>
         <div class="whitespace-nowrap inline-block text-8xl pan-left">
-          <span v-for="i in 10" class="inline-block mx-1" :style="{ color: theme[Palette.Blue] }">ROE</span>
+          <span v-for="i in 10" class="inline-block mx-1 text-blue">ROE</span>
         </div>
       </h1>
     </div>

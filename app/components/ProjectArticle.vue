@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Palette } from '~/types/palette';
-
 interface ProjectArticleProps {
   title: string
   info: string
@@ -8,24 +6,17 @@ interface ProjectArticleProps {
 }
 
 defineProps<ProjectArticleProps>()
-
-const { theme } = useTheme()
 </script>
 
 <template>
   <article
-    class="flex flex-col items-stretch border rounded-md overflow-hidden"
-    :style="{ borderColor: theme[Palette.Bg2] }"
+    class="flex flex-col items-stretch border rounded-md overflow-hidden border-background-2"
   >
     <div class="overflow-hidden">
       <slot />
     </div>
     <h3
-      class="border-t border-b text-center font-bold"
-      :style="{
-        backgroundColor: theme[Palette.Bg1],
-        borderColor: theme[Palette.Bg2],
-      }"
+      class="border-t border-b text-center font-bold bg-background-1 border-background-2"
     >
       {{ title }}
     </h3>
@@ -34,8 +25,7 @@ const { theme } = useTheme()
       :href="link"
       target="_blank"
       rel="noopener noreferrer"
-      class="underline px-2"
-      :style="{ color: theme[Palette.DimmedText] }"
+      class="underline px-2 text-text-dimmed"
     >See more</a>
   </article>
 </template>
