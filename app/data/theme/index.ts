@@ -17,3 +17,7 @@ export const themes: Record<ThemeName, Record<Palette, string>> = {
   [ThemeName.GruvboxDark]: GRUVBOX_DARK_THEME,
   [ThemeName.HighContrast]: HIGH_CONTRAST_THEME,
 }
+
+export function isThemeName(val: string): val is ThemeName {
+  return Object.values(ThemeName).includes(val as ThemeName)
+}

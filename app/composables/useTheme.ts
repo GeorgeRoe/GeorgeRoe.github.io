@@ -1,9 +1,15 @@
-import { ThemeName, themes } from '~/data/theme'
+import { isThemeName, ThemeName, themes } from '~/data/theme'
 import { ALL_PALETTE_KEYS } from '~/types/palette'
 
 function useThemeName() {
   return useCookie<ThemeName>('theme-name', {
-    default: () => ThemeName.AtomOneDark
+    default: () => ThemeName.AtomOneDark,
+    decode: (val) => {
+      if (isThemeName(val)) {
+        return val
+      }
+      return ThemeName.AtomOneDark
+    }
   })
 }
 
