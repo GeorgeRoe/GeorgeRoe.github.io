@@ -85,16 +85,16 @@ const timelineItems: Array<TimelineItem> = [
   </section>
   <section class="container max-w-screen-md mx-auto px-12 grid items-center justify-items-stretch">
     <hr class="col-start-1 row-start-1 bg-background-2" />
-    <div class="col-start-1 row-start-1 z-10 text-center flex items-center justify-around">
+    <div class="col-start-1 row-start-1 z-10 text-center flex items-center justify-around h-16">
       <a href="https://github.com/GeorgeRoe/" target="_blank" rel="noopener noreferrer" class="bg-background-0 p-2">
-        <icon-github class="h-6 aspect-square fill-text" />
+        <icon-github class="h-6 hover:h-12 transition-all aspect-square fill-text hover:fill-blue" />
       </a>
-      <a href="https://www.linkedin.com/in/georgesroe" target="_blank" rel="noopener noreferrer" class="bg-background-0 p-2">
-        <icon-linkedin class="h-8 aspect-square fill-text" />
+      <a href="https://www.linkedin.com/in/georgesroe" target="_blank" rel="noopener noreferrer" class="bg-background-0 p-0.5">
+        <icon-linkedin class="h-8 hover:h-16 transition-all aspect-square fill-text hover:fill-blue" />
       </a>
     </div>
   </section>
-  <section class="container max-w-screen-lg mx-auto px-4 py-6 text-center">
+  <section class="container max-w-screen-lg mx-auto px-4 pb-6 pt-2 text-center">
     <p>Hi, I am <span class="font-bold">George Roe</span>, a software engineer working at the <a href="https://www.ukri.org/councils/stfc/">Science and Technology Facilities Council</a>. <span class="font-bold">I enjoy improving others lives through technology and software.</span></p>
   </section>
   <section class="p-2">
