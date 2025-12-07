@@ -3,7 +3,7 @@ import { ALL_PALETTE_KEYS } from '~/types/palette'
 
 function useThemeName() {
   return useCookie<ThemeName>('theme-name', {
-    default: () => ThemeName.OneDarkDarker
+    default: () => ThemeName.AtomOneDark
   })
 }
 
