@@ -75,7 +75,7 @@ const timelineItems: Array<TimelineItem> = [
 </script>
 
 <template>
-  <section class="pb-6 pt-16">
+  <section class="pb-6 pt-16 max-w-screen-md mx-auto overflow-hidden">
     <name-carousel />
     <p
       class="text-center text-xl font-extrabold my-3"
@@ -83,7 +83,7 @@ const timelineItems: Array<TimelineItem> = [
       Software Engineer
     </p>
   </section>
-  <section class="container mx-auto px-12 grid items-center justify-items-stretch">
+  <section class="container max-w-screen-md mx-auto px-12 grid items-center justify-items-stretch">
     <hr class="col-start-1 row-start-1 bg-background-2" />
     <div class="col-start-1 row-start-1 z-10 text-center flex items-center justify-around">
       <a href="https://github.com/GeorgeRoe/" target="_blank" rel="noopener noreferrer" class="bg-background-0 p-2">
@@ -94,12 +94,12 @@ const timelineItems: Array<TimelineItem> = [
       </a>
     </div>
   </section>
-  <section class="container mx-auto px-4 py-6 text-center">
+  <section class="container max-w-screen-lg mx-auto px-4 py-6 text-center">
     <p>Hi, I am <span class="font-bold">George Roe</span>, a software engineer working at the <a href="https://www.ukri.org/councils/stfc/">Science and Technology Facilities Council</a>. <span class="font-bold">I enjoy improving others lives through technology and software.</span></p>
   </section>
   <section class="p-2">
     <h2 class="text-center font-extrabold text-4xl text-background-1" :style="textOutline(Palette.DimmedText, 1)">MULTIDISCIPLINE</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 container mx-auto">
       <article
         v-for="article in multidisciplineArticles"
         class="border border-background-2 rounded-md py-1.5 px-2"
@@ -118,12 +118,12 @@ const timelineItems: Array<TimelineItem> = [
       </article>
     </div>
   </section>
-  <section class="container mx-auto px-2 py-6">
-    <h2 class="text-center font-extrabold text-4xl text-background-1" :style="textOutline(Palette.DimmedText, 1)">PROJECTS</h2>
+  <section class="container mx-auto px-2 py-6 flex flex-col items-center">
+    <h2 class="font-extrabold text-4xl text-background-1" :style="textOutline(Palette.DimmedText, 1)">PROJECTS</h2>
     <projects-list />
-    <a href="/projects" class="underline px-2">See All Projects</a>
+    <a href="/projects" class="underline px-2 mt-4">See All Projects</a>
   </section>
-  <section class="container mx-auto px-2">
+  <section class="container mx-auto px-2 max-w-screen-lg">
     <h2 class="text-center font-extrabold text-4xl text-background-1" :style="textOutline(Palette.DimmedText, 1)">EXPERIENCE</h2>
     <timeline :items="timelineItems" />
   </section>

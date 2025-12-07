@@ -5,9 +5,12 @@ import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
-const activeBreakpoint = breakpoints.active()
-const show = computed(() => activeBreakpoint.value !== '')
-const smAndLarger = breakpoints.greaterOrEqual('sm') // sm and larger
+const show = ref(false)
+onMounted(() => {
+  show.value = true
+})
+
+const smAndLarger = breakpoints.greaterOrEqual('sm')
 
 const arrangement = computed<ProjectData[][]>(() => {
   const cols: ProjectData[][] = []
@@ -26,7 +29,7 @@ const arrangement = computed<ProjectData[][]>(() => {
 </script>
 
 <template>
-  <div v-if="show" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+  <div v-if="show" class="grid grid-cols-1 sm:grid-cols-2 md:max-w-screen-md mx-auto gap-2">
     <div
       v-for="projects in arrangement"
       class="flex flex-col gap-2"

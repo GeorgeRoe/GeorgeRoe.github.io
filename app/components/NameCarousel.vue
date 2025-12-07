@@ -1,12 +1,12 @@
 <template>
   <div 
-    class="relative -translate-x-[1rem] -rotate-3 w-[calc(100vw+2rem)] mx-auto"
+    class="relative -translate-x-[1rem] -rotate-3 w-[calc(100%+2rem)] mx-auto"
   >
     <div
-      class="w-1/4 h-full absolute z-10 -left-1 bg-linear-to-r from-background-0 from-10% to-transparent"
+      class="w-1/4 h-full absolute z-10 -left-1 bg-gradient-to-r from-background-0 from-10% to-transparent"
     />
     <div
-      class="w-1/4 h-full absolute z-10 -right-1 bg-linear-to-l from-background-0 from-10% to-transparent"
+      class="w-1/4 h-full absolute z-10 -right-1 bg-gradient-to-l from-background-0 from-10% to-transparent"
     />
     <h1 class="italic font-extrabold text-center w-full overflow-hidden">
       <div class="whitespace-nowrap inline-block text-7xl pan-right">
