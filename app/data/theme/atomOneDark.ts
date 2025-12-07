@@ -1,6 +1,6 @@
 import { Palette } from '~/types/palette'
 
-export const ONEDARK_DARKER_THEME: Record<Palette, string> = {
+export const ATOM_ONE_DARK_THEME: Record<Palette, string> = {
   [Palette.Bg0]: '#0E1013',
   [Palette.Bg1]: '#1F2329',
   [Palette.Bg2]: '#282C34',
