@@ -77,6 +77,11 @@ const timelineItems: Array<TimelineItem> = [
 <template>
   <section class="pb-6 pt-16">
     <name-carousel />
+    <p
+      class="text-center text-xl font-extrabold my-3"
+    >
+      Software Engineer
+    </p>
   </section>
   <section class="container mx-auto px-12 grid items-center justify-items-stretch">
     <hr class="col-start-1 row-start-1 bg-background-2" />
